@@ -180,7 +180,15 @@ return {
                     },
                 },
             },
-            ruff = {},
+            ruff = {
+                init_options = {
+                    settings = {
+                        lint = {
+                            ignore = { "F405" },
+                        },
+                    },
+                },
+            },
             -- rust_analyzer = {},
             -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
             --
