@@ -45,11 +45,11 @@ return {
 
                 -- Fuzzy find all the symbols in your current document.
                 --  Symbols are things like variables, functions, types, etc.
-                map("<leader>ds", require("fzf-lua").lsp_document_symbols, "[D]ocument [S]ymbols")
+                map("<leader>fds", require("fzf-lua").lsp_document_symbols, "[D]ocument [S]ymbols")
 
                 -- Fuzzy find all the symbols in your current workspace.
                 --  Similar to document symbols, except searches over your entire project.
-                map("<leader>ws", require("fzf-lua").lsp_live_workspace_symbols, "[W]orkspace [S]ymbols")
+                map("<leader>fws", require("fzf-lua").lsp_live_workspace_symbols, "[W]orkspace [S]ymbols")
 
                 -- Rename the variable under your cursor.
                 --  Most Language Servers support renaming across files, etc.
@@ -163,7 +163,7 @@ return {
                     ["textDocument/publishDiagnostics"] = function() end,
                 },
                 on_attach = function(client, _)
-                    client.server_capabilities.codeActionProvider = false
+                    client.server_capabilities.codeActionProvider = true
                 end,
                 settings = {
                     pyright = {
@@ -215,7 +215,6 @@ return {
                 -- },
             },
         }
-        local tmp = {}
 
         -- Ensure the servers and tools above are installed
         --
@@ -238,7 +237,7 @@ return {
         })
 
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-        for server, config in pairs(vim.tbl_extend("keep", servers, tmp)) do
+        for server, config in pairs(servers) do
             if not vim.tbl_isempty(config) then
                 vim.lsp.config(server, config)
             end

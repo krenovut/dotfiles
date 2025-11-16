@@ -3,6 +3,10 @@
 -- ABOUT: sets some quality-of-life keymaps
 -- ================================================================================================
 
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
 -- Center screen when jumping
 vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
@@ -47,3 +51,7 @@ vim.keymap.set("n", "<leader>cf", function()
         lsp_format = "fallback",
     })
 end, { desc = "Format current file" })
+
+vim.keymap.set("n", "<leader>w", ":write<CR>")
+vim.keymap.set("n", "<leader>q", ":quit<CR>")
+vim.keymap.set("n", "<leader>wq", ":wq<CR>", { noremap = true, silent = true })

@@ -4,7 +4,7 @@ return {
         formatters_by_ft = {
             lua = { "stylua" },
             -- Conform will run multiple formatters sequentially
-            -- python = { "isort", "black" },
+            python = { "ruff", "ruff_format" },
         },
         format_on_save = {
             -- These options will be passed to conform.format()
