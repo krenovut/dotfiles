@@ -55,3 +55,5 @@ end, { desc = "Format current file" })
 vim.keymap.set("n", "<leader>w", ":write<CR>")
 vim.keymap.set("n", "<leader>q", ":quit<CR>")
 vim.keymap.set("n", "<leader>wq", ":wq<CR>", { noremap = true, silent = true })
+
+vim.keymap.set({ "n", "x" }, "s", "<Nop>")
