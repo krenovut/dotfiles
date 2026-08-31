@@ -85,5 +85,9 @@ require("blink.cmp").setup({
 			"buffer", -- (Equivalent to cmp-buffer)
 			"path", -- (Equivalent to cmp-path)
 		},
+		per_filetype = {
+			-- KDL has no schema-aware completion server in this setup.
+			kdl = { "path", "buffer" },
+		},
 	},
 })

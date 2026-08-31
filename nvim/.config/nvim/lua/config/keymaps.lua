@@ -81,10 +81,18 @@ Keymap("x", "p", [["_dP]], { desc = "Paste over selection without losing yanked 
 Keymap("x", "<leader>P", "p", { desc = "Paste over selection and replace yank" })
 Keymap({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })
 
+-- Code navigation
+Keymap("n", "<leader>H", "^", { desc = "Jump to the line start" })
+Keymap("n", "<leader>L", "$", { desc = "Jump to the line end" })
+
 -- Code actions
 Keymap({ "n", "x" }, "<leader>ca", function()
 	vim.lsp.buf.code_action()
 end, { desc = "Show code actions" })
+
+Keymap("n", "<leader>cf", function()
+	require("conform").format({ async = true })
+end, { desc = "Format buffer" })
 
 Keymap("n", "<leader>cd", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Open diagnostic float window" })
 

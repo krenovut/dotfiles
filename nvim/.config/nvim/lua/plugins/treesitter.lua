@@ -7,6 +7,7 @@ tree.setup({
 
 tree.install({
 	"json",
+	"kdl",
 	"lua",
 	"python",
 	"vim",
