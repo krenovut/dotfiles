@@ -1,6 +1,9 @@
 source /usr/share/cachyos-fish-config/cachyos-config.fish
 
-
+alias e=exit
+alias v=nvim
+alias vim=nvim
+alias c=clear
 
 # Let Niri finish assigning Ghostty its final column size before Fastfetch
 # measures the terminal. Otherwise its wide output is rendered first and then
@@ -16,3 +19,7 @@ function fish_greeting
         command fastfetch --logo arch
     end
 end
+
+
+
+starship init fish | source
