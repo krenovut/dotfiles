@@ -69,9 +69,9 @@ binds {
     Mod+CTRL+Home                       { move-column-to-first; }
     Mod+CTRL+End                        { move-column-to-last; }
 
-    Mod+Shift+Left                      { move-column-to-monitor-left; }
+    Mod+Shift+Left                      { focus-monitor-left; }
     Mod+Shift+H                         { move-column-to-monitor-left; }
-    Mod+Shift+Right                     { move-column-to-monitor-right; }
+    Mod+Shift+Right                     { focus-monitor-right; }
     Mod+Shift+L                         { move-column-to-monitor-right; }
     Mod+Shift+UP                        { focus-monitor-up; }
     Mod+Shift+Down                      { focus-monitor-down; }
