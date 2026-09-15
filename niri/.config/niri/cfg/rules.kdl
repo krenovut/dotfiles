@@ -36,6 +36,13 @@
         default-window-height { proportion 0.7;}
     }
 
+    // Open all Remmina windows maximized (Mod+F), keeping the taskbar visible.
+    window-rule {
+        match app-id=r#"^org\.remmina\.Remmina$"#
+        open-fullscreen false
+        open-maximized true
+    }
+
     // if you use steam you will probably like these
     window-rule {
         match app-id="steam"
